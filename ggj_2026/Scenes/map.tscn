@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ceck8tr41pkki"]
+
+[ext_resource type="Texture2D" uid="uid://bjabuilwucqtn" path="res://icon.svg" id="1_26yhd"]
+[ext_resource type="PackedScene" uid="uid://c4et0fw7wbhw8" path="res://Scenes/npc.tscn" id="1_ci6au"]
+[ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="3_p3ir5"]
+
+[node name="Map" type="Node2D" unique_id=1897939605]
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=736353584]
+modulate = Color(0.21097012, 0.21097012, 0.20531417, 1)
+position = Vector2(576.5, 318.5)
+scale = Vector2(8.9140625, 5.0703125)
+texture = ExtResource("1_26yhd")
+
+[node name="Player" parent="." unique_id=990554551 instance=ExtResource("3_p3ir5")]
+position = Vector2(294, 500)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=225532118]
+
+[node name="NPC" parent="." unique_id=66833485 instance=ExtResource("1_ci6au")]
+modulate = Color(1.5174499, 0, 0.16279602, 1)
+position = Vector2(977, 168)
