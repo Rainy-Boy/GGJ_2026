@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://o543l62oklnx"]
 
 [ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="1_fn73a"]
+[ext_resource type="Script" uid="uid://cnon6poklu1vu" path="res://Scripts/poc_map.gd" id="1_smax2"]
 [ext_resource type="Texture2D" uid="uid://k0pnjstjmpn" path="res://Assets/textures/Rock058_1K-JPG_Color.jpg" id="2_f1hlh"]
+[ext_resource type="PackedScene" uid="uid://brngi2eqygony" path="res://Scenes/MapAndUtils/floor_n_1.tscn" id="2_qea3e"]
 [ext_resource type="PackedScene" uid="uid://c4nf06go1a6b6" path="res://Scenes/MapAndUtils/prison_cell_area.tscn" id="2_ww137"]
 [ext_resource type="Texture2D" uid="uid://gni6rt10fmtf" path="res://Assets/floor_n0.png" id="3_ww137"]
 [ext_resource type="PackedScene" uid="uid://bl56j7v08pbd1" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
@@ -45,7 +47,12 @@ size = Vector2(248, 71)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_283rw"]
 size = Vector2(78, 877)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o38mw"]
+radius = 50.000076
+
 [node name="Map" type="Node2D" unique_id=1549932075]
+script = ExtResource("1_smax2")
+next_scene = ExtResource("2_qea3e")
 
 [node name="NewMapLooks" type="Node2D" parent="." unique_id=628804654]
 
@@ -200,9 +207,16 @@ scale = Vector2(6.0639997, 6)
 texture = ExtResource("3_ww137")
 
 [node name="AreaExit" type="Polygon2D" parent="." unique_id=297869045]
-position = Vector2(4882, 754)
+position = Vector2(4891, 751)
 color = Color(1, 0.6392157, 1, 1)
 polygon = PackedVector2Array(27.621582, -108.08624, 62.621582, -39.086243, -7, -39)
+
+[node name="ExitCollider" type="Area2D" parent="AreaExit" unique_id=1471269979]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExit/ExitCollider" unique_id=1095265678]
+position = Vector2(27, -69)
+rotation = -2.6179938
+shape = SubResource("CircleShape2D_o38mw")
 
 [node name="Player" parent="." unique_id=1868815089 instance=ExtResource("1_fn73a")]
 position = Vector2(3277, -204)
@@ -242,6 +256,8 @@ position = Vector2(26.5, 34)
 
 [node name="GameOverUi" parent="." unique_id=2024322138 instance=ExtResource("8_o38mw")]
 visible = false
+
+[connection signal="body_entered" from="AreaExit/ExitCollider" to="." method="on_reaching_exit"]
 
 [editable path="GASMASK"]
 [editable path="Zone"]
