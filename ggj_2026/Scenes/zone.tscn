@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://djn56522hv0um"]
+[gd_scene format=3 uid="uid://dhb5a26lx7upo"]
 
 [ext_resource type="Script" uid="uid://b4ce3unplecu4" path="res://Scripts/zone_behaviour.gd" id="1_4hnuj"]
 [ext_resource type="Texture2D" uid="uid://bjabuilwucqtn" path="res://icon.svg" id="1_avmra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hnuj"]
-size = Vector2(490, 275)
+size = Vector2(571, 368)
 
 [node name="Zone" type="Area2D" unique_id=1273698596]
 script = ExtResource("1_4hnuj")

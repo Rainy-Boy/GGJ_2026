@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://k0pnjstjmpn" path="res://Assets/textures/Rock058_1K-JPG_Color.jpg" id="2_f1hlh"]
 [ext_resource type="PackedScene" uid="uid://c4nf06go1a6b6" path="res://Scenes/MapAndUtils/prison_cell_area.tscn" id="2_ww137"]
 [ext_resource type="Texture2D" uid="uid://gni6rt10fmtf" path="res://Assets/floor_n0.png" id="3_ww137"]
+[ext_resource type="PackedScene" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
+[ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="6_5et23"]
+[ext_resource type="PackedScene" uid="uid://dhb5a26lx7upo" path="res://Scenes/zone.tscn" id="7_tgt2m"]
 
 [sub_resource type="Gradient" id="Gradient_fn73a"]
 offsets = PackedFloat32Array(1)
@@ -41,7 +44,7 @@ size = Vector2(248, 71)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_283rw"]
 size = Vector2(78, 877)
 
-[node name="POCMap" type="Node2D" unique_id=1549932075]
+[node name="Map" type="Node2D" unique_id=1549932075]
 
 [node name="NewMapLooks" type="Node2D" parent="." unique_id=628804654]
 
@@ -200,14 +203,25 @@ position = Vector2(4882, 754)
 color = Color(1, 0.6392157, 1, 1)
 polygon = PackedVector2Array(27.621582, -108.08624, 62.621582, -39.086243, -7, -39)
 
-[node name="GasMask" type="ColorRect" parent="." unique_id=1962331659]
-offset_left = 2384.0
-offset_top = 546.0
-offset_right = 2504.0
-offset_bottom = 666.0
+[node name="Player" parent="." unique_id=1868815089 instance=ExtResource("1_fn73a")]
+position = Vector2(3277, -204)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1659251664]
+scale = Vector2(1.0000001, 1)
+
+[node name="MaskUI" parent="." unique_id=220193077 instance=ExtResource("5_283rw")]
+
+[node name="GASMASK" parent="." unique_id=1306960532 instance=ExtResource("6_5et23")]
+position = Vector2(2446, 595)
+
+[node name="GasMask" type="ColorRect" parent="GASMASK" unique_id=1962331659]
+offset_left = -57.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = 64.0
 color = Color(0.2394, 0.57, 0.32205, 1)
 
-[node name="Label" type="Label" parent="GasMask" unique_id=353714093]
+[node name="Label" type="Label" parent="GASMASK/GasMask" unique_id=353714093]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 43.0
@@ -216,8 +230,14 @@ offset_bottom = 92.0
 text = "GAS MASK
 "
 
-[node name="Player" parent="." unique_id=1868815089 instance=ExtResource("1_fn73a")]
-position = Vector2(3277, -204)
+[node name="Sprite2D" parent="GASMASK" index="1" unique_id=648951729]
+visible = false
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1659251664]
-scale = Vector2(1.0000001, 1)
+[node name="Zone" parent="." unique_id=1273698596 instance=ExtResource("7_tgt2m")]
+position = Vector2(4133, 155)
+
+[node name="CollisionShape2D" parent="Zone" index="0" unique_id=435861281]
+position = Vector2(26.5, 34)
+
+[editable path="GASMASK"]
+[editable path="Zone"]

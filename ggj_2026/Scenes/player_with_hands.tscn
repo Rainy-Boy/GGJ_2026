@@ -110,6 +110,7 @@ position = Vector2(72, 69)
 [node name="Player" parent="Camera2D" unique_id=1868815089 instance=ExtResource("1_kbu8r")]
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=307611042]
+visible = false
 position = Vector2(-155, 103)
 rotation = 1.3899024
 scale = Vector2(0.337, 0.3)
@@ -119,6 +120,7 @@ frame_progress = 0.5640652
 flip_v = true
 
 [node name="RightHand" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=694267365]
+visible = false
 position = Vector2(166, 94)
 rotation = -1.4038754
 scale = Vector2(0.325, 0.3)
@@ -129,6 +131,7 @@ flip_h = true
 flip_v = true
 
 [node name="Neutral" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=585702787]
+visible = false
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_ggr6v")
 autoplay = "default"
@@ -154,6 +157,7 @@ frame = 2
 frame_progress = 0.03148307
 
 [node name="Smiling" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=370957416]
+visible = false
 position = Vector2(-15, -18)
 sprite_frames = SubResource("SpriteFrames_nlttd")
 autoplay = "default"
