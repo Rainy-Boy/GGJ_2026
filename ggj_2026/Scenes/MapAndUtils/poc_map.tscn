@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
 [ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="6_5et23"]
 [ext_resource type="PackedScene" uid="uid://dhb5a26lx7upo" path="res://Scenes/zone.tscn" id="7_tgt2m"]
+[ext_resource type="PackedScene" path="res://Scenes/game_over_ui.tscn" id="8_o38mw"]
 
 [sub_resource type="Gradient" id="Gradient_fn73a"]
 offsets = PackedFloat32Array(1)
@@ -214,6 +215,9 @@ scale = Vector2(1.0000001, 1)
 [node name="GASMASK" parent="." unique_id=1306960532 instance=ExtResource("6_5et23")]
 position = Vector2(2446, 595)
 
+[node name="Sprite2D" parent="GASMASK" index="0" unique_id=648951729]
+visible = false
+
 [node name="GasMask" type="ColorRect" parent="GASMASK" unique_id=1962331659]
 offset_left = -57.0
 offset_top = -56.0
@@ -230,14 +234,14 @@ offset_bottom = 92.0
 text = "GAS MASK
 "
 
-[node name="Sprite2D" parent="GASMASK" index="1" unique_id=648951729]
-visible = false
-
 [node name="Zone" parent="." unique_id=1273698596 instance=ExtResource("7_tgt2m")]
 position = Vector2(4133, 155)
 
 [node name="CollisionShape2D" parent="Zone" index="0" unique_id=435861281]
 position = Vector2(26.5, 34)
+
+[node name="GameOverUi" parent="." unique_id=2024322138 instance=ExtResource("8_o38mw")]
+visible = false
 
 [editable path="GASMASK"]
 [editable path="Zone"]
