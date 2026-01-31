@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cmc0yjeu1hwpf" path="res://Assets/masks/covered_a0.png" id="5_a48ls"]
 [ext_resource type="Texture2D" uid="uid://dclq6c325hnmi" path="res://Assets/masks/covered_a1.png" id="6_dvchv"]
 [ext_resource type="Texture2D" uid="uid://d1feikbqn3vnq" path="res://Assets/masks/covered_a2.png" id="7_58230"]
+[ext_resource type="Texture2D" uid="uid://cb04tiqesybxl" path="res://Assets/masks/covered_b0.png" id="8_xr841"]
+[ext_resource type="Texture2D" uid="uid://bxgj4apof7wqq" path="res://Assets/masks/covered_b1.png" id="9_tuwer"]
+[ext_resource type="Texture2D" uid="uid://oejx12t6ll5n" path="res://Assets/masks/covered_b2.png" id="10_x8gqx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dvchv"]
 animations = [{
@@ -42,6 +45,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0wty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xr841")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tuwer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x8gqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PlayerWithHands" type="Node2D" unique_id=417792850]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=577140398]
@@ -69,8 +89,18 @@ flip_h = true
 flip_v = true
 
 [node name="CoveredA" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=286243777]
+visible = false
+modulate = Color(0.5019608, 1, 1, 1)
 position = Vector2(0, 26)
 sprite_frames = SubResource("SpriteFrames_xr841")
 autoplay = "default"
 frame = 2
 frame_progress = 0.15082106
+
+[node name="CoveredB" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=1514307398]
+modulate = Color(0.65700006, 1, 0.58000004, 1)
+position = Vector2(-29, 12)
+sprite_frames = SubResource("SpriteFrames_m0wty")
+autoplay = "default"
+frame = 2
+frame_progress = 0.03148307
