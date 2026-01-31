@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://s4exkmv5hfvu"]
+
+[ext_resource type="Script" uid="uid://cl052m38cd7ft" path="res://Scripts/ui_item_list_behaviour.gd" id="1_a38qc"]
+
+[node name="MaskUI" type="CanvasLayer" unique_id=220193077]
+
+[node name="ItemList" type="ItemList" parent="." unique_id=205741465]
+offset_left = 951.0
+offset_top = 6.0
+offset_right = 1153.0
+offset_bottom = 216.0
+focus_mode = 1
+focus_behavior_recursive = 1
+script = ExtResource("1_a38qc")
+
+[connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]
