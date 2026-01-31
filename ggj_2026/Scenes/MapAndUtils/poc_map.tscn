@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://o543l62oklnx"]
+
+[ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="1_fn73a"]
+[ext_resource type="PackedScene" uid="uid://c4nf06go1a6b6" path="res://Scenes/MapAndUtils/prison_cell_area.tscn" id="2_ww137"]
+
+[sub_resource type="Gradient" id="Gradient_fn73a"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.24842662, 0.68, 0.2176, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ww137"]
+gradient = SubResource("Gradient_fn73a")
+
+[sub_resource type="Gradient" id="Gradient_28xcn"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fn73a"]
+gradient = SubResource("Gradient_28xcn")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5et23"]
+size = Vector2(166, 1274)
+
+[sub_resource type="Gradient" id="Gradient_ww137"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f1hlh"]
+gradient = SubResource("Gradient_ww137")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn73a"]
+size = Vector2(1123, 436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww137"]
+size = Vector2(890, 442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1hlh"]
+size = Vector2(248, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_283rw"]
+size = Vector2(78, 877)
+
+[node name="POCMap" type="Node2D" unique_id=1549932075]
+
+[node name="MapItems" type="Node2D" parent="." unique_id=140957348]
+
+[node name="GasArea" type="Sprite2D" parent="MapItems" unique_id=157693004]
+position = Vector2(4157, 184)
+scale = Vector2(9, 6.9374995)
+texture = SubResource("GradientTexture2D_ww137")
+
+[node name="CellRows" type="Node2D" parent="MapItems" unique_id=1421825610]
+
+[node name="CellRow" type="Node2D" parent="MapItems/CellRows" unique_id=569475855]
+
+[node name="PrisonCellArea" parent="MapItems/CellRows/CellRow" unique_id=1935316489 instance=ExtResource("2_ww137")]
+
+[node name="PrisonCellArea2" parent="MapItems/CellRows/CellRow" unique_id=592475892 instance=ExtResource("2_ww137")]
+position = Vector2(435.00003, -1)
+
+[node name="PrisonCellArea3" parent="MapItems/CellRows/CellRow" unique_id=850234321 instance=ExtResource("2_ww137")]
+position = Vector2(870, -2)
+scale = Vector2(0.9999999, 1)
+
+[node name="CellRow3" type="Node2D" parent="MapItems/CellRows" unique_id=235967196]
+position = Vector2(1304, -3)
+
+[node name="PrisonCellArea" parent="MapItems/CellRows/CellRow3" unique_id=1558486785 instance=ExtResource("2_ww137")]
+
+[node name="PrisonCellArea2" parent="MapItems/CellRows/CellRow3" unique_id=297791432 instance=ExtResource("2_ww137")]
+position = Vector2(435.00003, -1)
+
+[node name="PrisonCellArea3" parent="MapItems/CellRows/CellRow3" unique_id=1869641196 instance=ExtResource("2_ww137")]
+position = Vector2(870, -2)
+scale = Vector2(0.9999999, 1)
+
+[node name="CellRow4" type="Node2D" parent="MapItems/CellRows" unique_id=1013348013]
+position = Vector2(2614, 2)
+
+[node name="PrisonCellArea" parent="MapItems/CellRows/CellRow4" unique_id=932430352 instance=ExtResource("2_ww137")]
+
+[node name="PrisonCellArea2" parent="MapItems/CellRows/CellRow4" unique_id=1992351190 instance=ExtResource("2_ww137")]
+position = Vector2(435.00003, -1)
+
+[node name="PrisonCellArea3" parent="MapItems/CellRows/CellRow4" unique_id=537063437 instance=ExtResource("2_ww137")]
+position = Vector2(870, -2)
+scale = Vector2(0.9999999, 1)
+
+[node name="CellRow2" type="Node2D" parent="MapItems/CellRows" unique_id=2024544491]
+position = Vector2(1382, 385)
+rotation = 3.1415925
+
+[node name="PrisonCellArea" parent="MapItems/CellRows/CellRow2" unique_id=1017574648 instance=ExtResource("2_ww137")]
+
+[node name="PrisonCellArea2" parent="MapItems/CellRows/CellRow2" unique_id=1612683194 instance=ExtResource("2_ww137")]
+position = Vector2(435.00003, -1)
+
+[node name="PrisonCellArea3" parent="MapItems/CellRows/CellRow2" unique_id=2144087394 instance=ExtResource("2_ww137")]
+position = Vector2(870, -2)
+scale = Vector2(0.9999999, 1)
+
+[node name="CellRow5" type="Node2D" parent="MapItems/CellRows" unique_id=759924102]
+position = Vector2(2692, 385)
+rotation = 3.1415925
+
+[node name="PrisonCellArea" parent="MapItems/CellRows/CellRow5" unique_id=565512068 instance=ExtResource("2_ww137")]
+
+[node name="PrisonCellArea2" parent="MapItems/CellRows/CellRow5" unique_id=436645428 instance=ExtResource("2_ww137")]
+position = Vector2(435.00003, -1)
+
+[node name="PrisonCellArea3" parent="MapItems/CellRows/CellRow5" unique_id=127302769 instance=ExtResource("2_ww137")]
+position = Vector2(870, -2)
+scale = Vector2(0.9999999, 1)
+
+[node name="CellRow6" type="Node2D" parent="MapItems/CellRows" unique_id=442612973]
+position = Vector2(4011, 385)
+rotation = 3.1415925
+
+[node name="PrisonCellArea" parent="MapItems/CellRows/CellRow6" unique_id=480668100 instance=ExtResource("2_ww137")]
+
+[node name="PrisonCellArea2" parent="MapItems/CellRows/CellRow6" unique_id=1616924391 instance=ExtResource("2_ww137")]
+position = Vector2(435.00003, -1)
+
+[node name="PrisonCellArea3" parent="MapItems/CellRows/CellRow6" unique_id=784801457 instance=ExtResource("2_ww137")]
+position = Vector2(870, -2)
+scale = Vector2(0.9999999, 1)
+
+[node name="LeftSideWalls" type="StaticBody2D" parent="MapItems" unique_id=1759787597]
+position = Vector2(0, 1.5258789e-05)
+scale = Vector2(0.99999994, 1)
+
+[node name="Wall9" type="Sprite2D" parent="MapItems/LeftSideWalls" unique_id=135941986]
+position = Vector2(-70.42562, 199.00504)
+rotation = -1.5707964
+scale = Vector2(20.13722, 2.586499)
+texture = SubResource("GradientTexture2D_fn73a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapItems/LeftSideWalls" unique_id=1457839871]
+position = Vector2(-67.00001, 193)
+shape = SubResource("RectangleShape2D_5et23")
+
+[node name="RightSideWalls" type="Node2D" parent="MapItems" unique_id=1224521735]
+
+[node name="Wall5" type="Sprite2D" parent="MapItems/RightSideWalls" unique_id=301264214]
+position = Vector2(4489.3887, -225.54312)
+rotation = -1.5707964
+scale = Vector2(6.9742417, 17.75909)
+texture = SubResource("GradientTexture2D_fn73a")
+
+[node name="Wall6" type="Sprite2D" parent="MapItems/RightSideWalls" unique_id=1053160261]
+position = Vector2(4394, 612)
+rotation = -1.5707964
+scale = Vector2(6.9742417, 14.041302)
+texture = SubResource("GradientTexture2D_fn73a")
+
+[node name="Wall7" type="Sprite2D" parent="MapItems/RightSideWalls" unique_id=1896023982]
+position = Vector2(4932.734, 799.99994)
+rotation = -1.5707964
+scale = Vector2(1.1162119, 3.5511088)
+texture = SubResource("GradientTexture2D_f1hlh")
+
+[node name="Wall8" type="Sprite2D" parent="MapItems/RightSideWalls" unique_id=892444478]
+position = Vector2(5023, 245.00009)
+scale = Vector2(1.1162119, 18.4375)
+texture = SubResource("GradientTexture2D_f1hlh")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="MapItems/RightSideWalls" unique_id=944777603]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapItems/RightSideWalls/RigidBody2D" unique_id=668104654]
+position = Vector2(4493.5, -225)
+shape = SubResource("RectangleShape2D_fn73a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapItems/RightSideWalls/RigidBody2D" unique_id=585673249]
+position = Vector2(4396, 611)
+shape = SubResource("RectangleShape2D_ww137")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapItems/RightSideWalls/RigidBody2D" unique_id=988157734]
+position = Vector2(4930, 801.5)
+shape = SubResource("RectangleShape2D_f1hlh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MapItems/RightSideWalls/RigidBody2D" unique_id=2096845235]
+position = Vector2(5022, 391.5)
+shape = SubResource("RectangleShape2D_283rw")
+
+[node name="AreaExit" type="Polygon2D" parent="." unique_id=297869045]
+position = Vector2(4882, 754)
+color = Color(1, 0.6392157, 1, 1)
+polygon = PackedVector2Array(27.621582, -108.08624, 62.621582, -39.086243, -7, -39)
+
+[node name="GasMask" type="ColorRect" parent="." unique_id=1962331659]
+offset_left = 2384.0
+offset_top = 546.0
+offset_right = 2504.0
+offset_bottom = 666.0
+color = Color(0.2394, 0.57, 0.32205, 1)
+
+[node name="Label" type="Label" parent="GasMask" unique_id=353714093]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 43.0
+offset_right = 100.0
+offset_bottom = 92.0
+text = "GAS MASK
+"
+
+[node name="Player" parent="." unique_id=1868815089 instance=ExtResource("1_fn73a")]
+position = Vector2(3277, -204)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1659251664]
+scale = Vector2(1.0000001, 1)
