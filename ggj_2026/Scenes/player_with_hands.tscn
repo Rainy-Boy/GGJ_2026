@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://busdnmvce4ykt" path="res://Assets/cropped_hand0.png" id="2_fm0mt"]
 [ext_resource type="Texture2D" uid="uid://bcuism5l4fqt4" path="res://Assets/cropped_hand1.png" id="3_fiblc"]
 [ext_resource type="Texture2D" uid="uid://cg7abpghxk580" path="res://Assets/cropped_hand2.png" id="4_a48ls"]
+[ext_resource type="Texture2D" uid="uid://cmc0yjeu1hwpf" path="res://Assets/masks/covered_a0.png" id="5_a48ls"]
+[ext_resource type="Texture2D" uid="uid://dclq6c325hnmi" path="res://Assets/masks/covered_a1.png" id="6_dvchv"]
+[ext_resource type="Texture2D" uid="uid://d1feikbqn3vnq" path="res://Assets/masks/covered_a2.png" id="7_58230"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dvchv"]
 animations = [{
@@ -16,6 +19,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_a48ls")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xr841"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a48ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dvchv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_58230")
 }],
 "loop": true,
 "name": &"default",
@@ -47,3 +67,10 @@ autoplay = "default"
 frame_progress = 0.8312628
 flip_h = true
 flip_v = true
+
+[node name="CoveredA" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=286243777]
+position = Vector2(0, 26)
+sprite_frames = SubResource("SpriteFrames_xr841")
+autoplay = "default"
+frame = 2
+frame_progress = 0.15082106
