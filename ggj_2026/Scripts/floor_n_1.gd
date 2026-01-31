@@ -5,3 +5,7 @@ extends Node2D
 
 func on_reaching_exit(body):
 	get_tree().change_scene_to_packed(next_scene)
+
+
+func _on_game_over_ui_retry_pressed() -> void:
+	get_tree().reload_current_scene()

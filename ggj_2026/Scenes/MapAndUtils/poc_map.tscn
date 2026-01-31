@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="1_fn73a"]
 [ext_resource type="Script" uid="uid://cnon6poklu1vu" path="res://Scripts/poc_map.gd" id="1_smax2"]
 [ext_resource type="Texture2D" uid="uid://k0pnjstjmpn" path="res://Assets/textures/Rock058_1K-JPG_Color.jpg" id="2_f1hlh"]
-[ext_resource type="PackedScene" uid="uid://brngi2eqygony" path="res://Scenes/MapAndUtils/floor_n_1.tscn" id="2_qea3e"]
+[ext_resource type="PackedScene" uid="uid://pmh1u15wegbf" path="res://Scenes/MapAndUtils/floor_n_1.tscn" id="2_qea3e"]
 [ext_resource type="PackedScene" uid="uid://c4nf06go1a6b6" path="res://Scenes/MapAndUtils/prison_cell_area.tscn" id="2_ww137"]
 [ext_resource type="Texture2D" uid="uid://gni6rt10fmtf" path="res://Assets/floor_n0.png" id="3_ww137"]
 [ext_resource type="PackedScene" uid="uid://bl56j7v08pbd1" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
@@ -258,6 +258,7 @@ position = Vector2(26.5, 34)
 visible = false
 
 [connection signal="body_entered" from="AreaExit/ExitCollider" to="." method="on_reaching_exit"]
+[connection signal="retry_pressed" from="GameOverUi" to="." method="_on_game_over_ui_retry_pressed"]
 
 [editable path="GASMASK"]
 [editable path="Zone"]

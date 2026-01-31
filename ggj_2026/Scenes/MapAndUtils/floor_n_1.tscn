@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dv28spakx157m" path="res://Scripts/floor_n_1.gd" id="1_e0esm"]
 [ext_resource type="Texture2D" uid="uid://bbtkie6wjfvm5" path="res://Assets/floor_n1.png" id="1_l66p3"]
-[ext_resource type="PackedScene" path="res://Scenes/start_screen.tscn" id="2_4bg5r"]
+[ext_resource type="PackedScene" uid="uid://c4mheux54yfcc" path="res://Scenes/ending.tscn" id="2_4bg5r"]
 [ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="2_bydul"]
 [ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="2_tuwts"]
 [ext_resource type="Texture2D" uid="uid://tertwah4g03r" path="res://Assets/textures/Tiles133A_1K-JPG_Color.jpg" id="3_l32xl"]
@@ -186,6 +186,7 @@ position = Vector2(27, -69)
 rotation = -2.6179938
 shape = SubResource("CircleShape2D_tc0c0")
 
+[connection signal="retry_pressed" from="GameOverUi" to="." method="_on_game_over_ui_retry_pressed"]
 [connection signal="body_entered" from="AreaExit/ExitCollider" to="." method="on_reaching_exit"]
 
 [editable path="Polygon2D/GASMASK"]
