@@ -5,9 +5,9 @@ extends CharacterBody2D
 var ownedMasks = {
 	Global.Masks.GAS: false,
 	Global.Masks.COVID: false,
-	Global.Masks.JANITOR: false,
-	Global.Masks.OFFICE: false,
-	Global.Masks.GUARD: false,
+	#Global.Masks.JANITOR: false,
+	#Global.Masks.OFFICE: false,
+	#Global.Masks.GUARD: false,
 	Global.Masks.FACE: false,
 }
 
@@ -17,7 +17,7 @@ var equippedMask = Global.Masks.NONE : set = set_equipped_mask, get = get_equipp
 @onready var sprite_neutral = $Sprites/Neutral
 @onready var sprite_covered_a = $Sprites/CoveredA
 @onready var sprite_covered_b = $Sprites/CoveredB
-@onready var sprite_smiling = $Sprites/CoveredB
+@onready var sprite_smiling = $Sprites/Smiling
 
 @onready var face_sprites = [
 	sprite_neutral,
@@ -46,6 +46,8 @@ func update_animation():
 			sprite_covered_b.visible = true
 		Global.Masks.COVID:
 			sprite_covered_a.visible = true
+		Global.Masks.FACE:
+			sprite_smiling.visible = true
 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c4mheux54yfcc"]
+
+[ext_resource type="Script" uid="uid://cfqdvaush2d3u" path="res://Scripts/ending.gd" id="1_kg0jb"]
+[ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="2_kg0jb"]
+
+[node name="Ending" type="Node2D" unique_id=850074725]
+script = ExtResource("1_kg0jb")
+
+[node name="Player" parent="." unique_id=1868815089 instance=ExtResource("2_kg0jb")]
+position = Vector2(574, 376)
+
+[node name="Label" type="Label" parent="." unique_id=1542133482]
+offset_left = 239.0
+offset_top = 33.0
+offset_right = 1000.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 78
+text = "Thank you for playing our game"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
