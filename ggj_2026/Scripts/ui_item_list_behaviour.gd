@@ -7,3 +7,6 @@ func _on_item_selected(index):
 	for mask in Global.maskNames:
 		if Global.maskNames[mask] == itemName:
 			player.equippedMask = mask
+
+func _ready():
+	self.select(0)

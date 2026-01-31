@@ -16,5 +16,6 @@ var maskNames = {
 	Masks.JANITOR: "Janitor mask",
 	Masks.OFFICE: "Office mask",
 	Masks.GUARD: "Guard mask",
-	Masks.FACE: "Face mask"
+	Masks.FACE: "Face mask",
+	Masks.NONE: "Default"
 }
