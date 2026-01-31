@@ -44,6 +44,8 @@ func update_animation():
 			sprite_neutral.visible = true
 		Global.Masks.GAS:
 			sprite_covered_b.visible = true
+		Global.Masks.COVID:
+			sprite_covered_a.visible = true
 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
