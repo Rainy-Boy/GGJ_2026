@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://k0pnjstjmpn" path="res://Assets/textures/Rock058_1K-JPG_Color.jpg" id="2_f1hlh"]
 [ext_resource type="PackedScene" uid="uid://c4nf06go1a6b6" path="res://Scenes/MapAndUtils/prison_cell_area.tscn" id="2_ww137"]
 [ext_resource type="Texture2D" uid="uid://gni6rt10fmtf" path="res://Assets/floor_n0.png" id="3_ww137"]
-[ext_resource type="PackedScene" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
+[ext_resource type="PackedScene" uid="uid://bl56j7v08pbd1" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
 [ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="6_5et23"]
 [ext_resource type="PackedScene" uid="uid://dhb5a26lx7upo" path="res://Scenes/zone.tscn" id="7_tgt2m"]
 [ext_resource type="PackedScene" uid="uid://b7re1ma6ebvln" path="res://Scenes/game_over_ui.tscn" id="8_o38mw"]

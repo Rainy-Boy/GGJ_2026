@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://s4exkmv5hfvu"]
+[gd_scene format=3 uid="uid://bl56j7v08pbd1"]
 
 [ext_resource type="Script" uid="uid://cl052m38cd7ft" path="res://Scripts/ui_item_list_behaviour.gd" id="1_a38qc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a38qc"]
 
 [node name="MaskUI" type="CanvasLayer" unique_id=220193077]
 
@@ -11,6 +13,9 @@ offset_right = 1153.0
 offset_bottom = 216.0
 focus_mode = 1
 focus_behavior_recursive = 1
+item_count = 1
+item_0/text = "Default"
+item_0/icon = SubResource("ViewportTexture_a38qc")
 script = ExtResource("1_a38qc")
 
 [connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]
