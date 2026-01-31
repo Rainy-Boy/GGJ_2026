@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bw1qq04lpf67"]
+
+[ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="1_kbu8r"]
+[ext_resource type="Texture2D" uid="uid://busdnmvce4ykt" path="res://Assets/cropped_hand0.png" id="2_fm0mt"]
+[ext_resource type="Texture2D" uid="uid://bcuism5l4fqt4" path="res://Assets/cropped_hand1.png" id="3_fiblc"]
+[ext_resource type="Texture2D" uid="uid://cg7abpghxk580" path="res://Assets/cropped_hand2.png" id="4_a48ls"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvchv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fm0mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fiblc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a48ls")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlayerWithHands" type="Node2D" unique_id=417792850]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=577140398]
+position = Vector2(72, 69)
+
+[node name="Player" parent="Camera2D" unique_id=1868815089 instance=ExtResource("1_kbu8r")]
+
+[node name="LeftHand" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=307611042]
+position = Vector2(-155, 103)
+rotation = 1.3899024
+scale = Vector2(0.337, 0.3)
+sprite_frames = SubResource("SpriteFrames_dvchv")
+autoplay = "default"
+frame_progress = 0.5640652
+flip_v = true
+
+[node name="RightHand" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=694267365]
+position = Vector2(166, 94)
+rotation = -1.4038754
+scale = Vector2(0.325, 0.3)
+sprite_frames = SubResource("SpriteFrames_dvchv")
+autoplay = "default"
+frame_progress = 0.8312628
+flip_h = true
+flip_v = true
