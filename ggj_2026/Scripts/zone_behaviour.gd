@@ -5,7 +5,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	print("Player is in the zone")
-	
+
 	if body.name == "Player" and body.equippedMask != maskType:
 		for npc in npcs:
 			# You have to make a new tween for each instance (cringe)
@@ -14,4 +14,9 @@ func _on_body_entered(body):
 
 		if maskType == Global.Masks.GAS:
 			print("The player chocked on gas")
-			# TODO: end game screen
+			
+			get_tree().paused = true
+			# not deleting the player so the camera doesn't jump to (0,0)
+			body.visible = false
+			var gameOverUi = get_tree().get_root().get_node("Map").get_node("GameOverUi")
+			gameOverUi.visible = true
