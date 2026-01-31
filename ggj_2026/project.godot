@@ -15,6 +15,10 @@ run/main_scene="uid://ceck8tr41pkki"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cci257tu3efx0"
+
 [input]
 
 ui_left={
