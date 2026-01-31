@@ -1,16 +1,96 @@
 [gd_scene format=3 uid="uid://pmh1u15wegbf"]
 
+[ext_resource type="Script" uid="uid://dv28spakx157m" path="res://Scripts/floor_n_1.gd" id="1_e0esm"]
 [ext_resource type="Texture2D" uid="uid://bbtkie6wjfvm5" path="res://Assets/floor_n1.png" id="1_l66p3"]
+[ext_resource type="PackedScene" path="res://Scenes/start_screen.tscn" id="2_4bg5r"]
+[ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="2_bydul"]
 [ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="2_tuwts"]
 [ext_resource type="Texture2D" uid="uid://tertwah4g03r" path="res://Assets/textures/Tiles133A_1K-JPG_Color.jpg" id="3_l32xl"]
+[ext_resource type="PackedScene" uid="uid://dhb5a26lx7upo" path="res://Scenes/zone.tscn" id="4_qaspu"]
+[ext_resource type="PackedScene" uid="uid://c4et0fw7wbhw8" path="res://Scenes/npc.tscn" id="5_gkcig"]
+[ext_resource type="PackedScene" uid="uid://b7re1ma6ebvln" path="res://Scenes/game_over_ui.tscn" id="6_2e2mx"]
+[ext_resource type="Texture2D" uid="uid://cmc0yjeu1hwpf" path="res://Assets/masks/covered_a0.png" id="6_xotf0"]
+[ext_resource type="Texture2D" uid="uid://dclq6c325hnmi" path="res://Assets/masks/covered_a1.png" id="7_bydul"]
+[ext_resource type="Texture2D" uid="uid://d1feikbqn3vnq" path="res://Assets/masks/covered_a2.png" id="8_tc0c0"]
+[ext_resource type="PackedScene" uid="uid://bl56j7v08pbd1" path="res://Scenes/mask_ui.tscn" id="11_tc0c0"]
 
-[node name="FloorN1" type="Node2D" unique_id=303085456]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0esm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xotf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bydul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tc0c0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc0c0"]
+size = Vector2(497.62057, 399.37134)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tc0c0"]
+radius = 50.000076
+
+[node name="Map" type="Node2D" unique_id=303085456]
+script = ExtResource("1_e0esm")
+next_scene = ExtResource("2_4bg5r")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=366620380]
 texture_repeat = 2
 texture = ExtResource("3_l32xl")
 polygon = PackedVector2Array(576, 3196, 1275, 2541, 1092, 1766, 466, 1930, 369, 1270, 248, 575, 1841, 267, 2205, 1537, 1512, 1667, 1650, 2380, 3087, 2240, 3492, 1509, 3890, 1679, 3440, 2423, 3900, 3155, 4411, 3209, 4387, 3683, 3926, 3663, 3909, 4131, 3487, 4162, 3458, 3754, 2967, 3851, 2845, 3397, 3288, 3229, 3161, 3002, 2960, 2687, 1480, 2701, 771, 3414)
 uv = PackedVector2Array(635.8018, 3152.7979, 1333.8018, 2478.7979, 1092, 1766, 464, 1940, 335, 1440, 1288, 1291, 1629.8018, 2562.7979, 1311.8018, 2746.7979)
+
+[node name="GASMASK" parent="Polygon2D" unique_id=1306960532 instance=ExtResource("2_bydul")]
+position = Vector2(618.79913, 859.28143)
+maskType = 1
+
+[node name="Sprite2D" parent="Polygon2D/GASMASK" index="0" unique_id=648951729]
+visible = false
+
+[node name="GasMask" type="ColorRect" parent="Polygon2D/GASMASK" unique_id=1145139596]
+offset_left = -57.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = 64.0
+color = Color(0.23543519, 0.44946563, 0.94517595, 1)
+
+[node name="Label" type="Label" parent="Polygon2D/GASMASK/GasMask" unique_id=193563115]
+layout_mode = 0
+offset_left = 9.200867
+offset_top = 43.0
+offset_right = 118.0
+offset_bottom = 92.0
+text = "COVID MASK
+"
+
+[node name="GASMASK2" parent="Polygon2D" unique_id=1965061561 instance=ExtResource("2_bydul")]
+position = Vector2(4180.257, 3431.0095)
+
+[node name="Sprite2D" parent="Polygon2D/GASMASK2" index="0" unique_id=648951729]
+visible = false
+
+[node name="GasMask" type="ColorRect" parent="Polygon2D/GASMASK2" unique_id=1327511041]
+offset_left = -57.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = 64.0
+color = Color(0.2394, 0.57, 0.32205, 1)
+
+[node name="Label" type="Label" parent="Polygon2D/GASMASK2/GasMask" unique_id=800278052]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 43.0
+offset_right = 100.0
+offset_bottom = 92.0
+text = "GAS MASK
+"
 
 [node name="MapTexture" type="Sprite2D" parent="." unique_id=690957778]
 position = Vector2(2278, 2280)
@@ -25,7 +105,93 @@ position = Vector2(-149.40765, 233.65514)
 position = Vector2(-3.071497, 12.944275)
 polygon = PackedVector2Array(-17.112762, -379.55246, 14.918823, -228.82843, 331.72446, -255.37518, 416.63016, -413.11984, 160.37738, -792.0141, -367.92456, -723.7824, -396.66525, -118.03424, -139.3155, 193.50592, 659.4999, 243.30847, 690.6538, -137.56036, 543.65955, -451.95267, 395.34885, -482.66788, 419.26285, -414.87497, 509.6534, -377.13913, 405.66043, -215.88416, 504.8267, -55.945618, 507.67886, -22.817017, 511.40854, -22.817017, 508.9952, -56.82318, 620.44763, -45.19525, 614.7434, 60.99164, 513.8219, 53.532227, 512.28613, 13.821838, 509.6534, 13.821838, 510.53098, 53.751648, 482.00967, 59.455933, 482.44846, 63.185608, 511.18918, 56.82318, 512.28613, 159.2804, 418.16586, 165.86224, 413.3392, 77.22687, 438.78897, 71.961365, 439.0084, 68.88989, 412.46164, 74.374756, 403.24704, 32.031616, 399.29794, 32.470398, 408.51254, 76.788086, 303.42258, 98.50812, 277.3146, -3.0715332, 373.19003, -35.980713, 386.5731, -4.3878784, 389.86398, -5.4848633, 375.60336, -38.832825, 304.08078, -154.6731, -24.572174, -150.94342, -178.36772, 1.755127, -219.1751, -45.853455, -68.23169, -187.58228, -105.967545, -359.36816, -111.89119, -388.76703, -115.401505, -388.32825, -109.69725, -358.2712, -244.62486, -323.1681, -264.58975, -464.01935, -137.34096, -487.49457, -129.22336, -449.31992, -125.27426, -449.7587, -142.16763, -532.6898, -145.67795, -532.25104, -137.99915, -492.32123, -268.75824, -468.18784, -293.54984, -619.1312, -164.76527, -644.8004, -155.7701, -587.0997, -152.25978, -587.97723, -161.25496, -643.7034, -86.88022, -658.4029, -73.71655, -605.9676, -69.548065, -608.1615, -83.589294, -660.8162, 58.358917, -687.14355, 99.82449, -541.2462, -46.95044, -513.1637, -57.481354, -553.7517, -60.99167, -553.5323, -40.1492, -470.38177, -36.638885, -471.25937, -44.75647, -508.77582, 101.79904, -537.9553, 135.80518, -410.70648, -14.699432, -381.30762, -22.158844, -415.53317, -25.230377, -415.31378)
 
+[node name="Zone" parent="." unique_id=1273698596 node_paths=PackedStringArray("npcs") instance=ExtResource("4_qaspu")]
+position = Vector2(1913, 2529)
+maskType = 1
+npcs = [NodePath("../NPC"), null, NodePath("../NPC3"), NodePath("../NPC4"), null]
+
+[node name="CollisionShape2D" parent="Zone" index="0" unique_id=435861281]
+position = Vector2(389, -39.25)
+
+[node name="Polygon2D" type="Polygon2D" parent="Zone" unique_id=103764405]
+modulate = Color(1, 1, 1, 0.23137255)
+position = Vector2(0, -1)
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(1034, -269, 1034, 162, -270, 173, -251, -152)
+
+[node name="NPC" parent="." unique_id=1143530221 instance=ExtResource("5_gkcig")]
+position = Vector2(2412, 2392)
+maskType = 1
+
+[node name="Sprite2D" parent="NPC" index="0" unique_id=2120677741]
+visible = false
+
+[node name="CoveredA" type="AnimatedSprite2D" parent="NPC" unique_id=1735958572]
+modulate = Color(0.5019608, 1, 1, 1)
+position = Vector2(0, 26)
+sprite_frames = SubResource("SpriteFrames_e0esm")
+autoplay = "default"
+
+[node name="NPC3" parent="." unique_id=258678964 instance=ExtResource("5_gkcig")]
+position = Vector2(2254, 2613)
+maskType = 1
+
+[node name="CoveredA" type="AnimatedSprite2D" parent="NPC3" unique_id=751359378]
+modulate = Color(0.5019608, 1, 1, 1)
+position = Vector2(0, 26)
+sprite_frames = SubResource("SpriteFrames_e0esm")
+autoplay = "default"
+
+[node name="NPC4" parent="." unique_id=1260572396 instance=ExtResource("5_gkcig")]
+position = Vector2(2753, 2367)
+maskType = 1
+
+[node name="CoveredA" type="AnimatedSprite2D" parent="NPC4" unique_id=1456093077]
+modulate = Color(0.5019608, 1, 1, 1)
+position = Vector2(0, 26)
+sprite_frames = SubResource("SpriteFrames_e0esm")
+autoplay = "default"
+
 [node name="Player" parent="." unique_id=1868815089 instance=ExtResource("2_tuwts")]
 position = Vector2(788, 3162)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=907200772]
+
+[node name="GameOverUi" parent="." unique_id=2024322138 instance=ExtResource("6_2e2mx")]
+visible = false
+
+[node name="MaskUI" parent="." unique_id=220193077 instance=ExtResource("11_tc0c0")]
+
+[node name="GasZone" parent="." unique_id=1069286142 instance=ExtResource("4_qaspu")]
+position = Vector2(3564, 2952)
+
+[node name="CollisionShape2D" parent="GasZone" index="0" unique_id=435861281]
+position = Vector2(-178.85693, -847.9739)
+rotation = 2.083753
+shape = SubResource("RectangleShape2D_tc0c0")
+
+[node name="Polygon2D" type="Polygon2D" parent="GasZone" unique_id=1770140396]
+color = Color(0.055999994, 1, 0.04000002, 0.2901961)
+polygon = PackedVector2Array(-472, -728, -236, -1160, 129, -956, -132, -533)
+
+[node name="AreaExit" type="Polygon2D" parent="." unique_id=1978692907]
+position = Vector2(3563, 1789)
+color = Color(1, 0.6392157, 1, 1)
+polygon = PackedVector2Array(27.621582, -108.08624, 62.621582, -39.086243, -7, -39)
+
+[node name="ExitCollider" type="Area2D" parent="AreaExit" unique_id=2009692214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExit/ExitCollider" unique_id=1041929078]
+position = Vector2(27, -69)
+rotation = -2.6179938
+shape = SubResource("CircleShape2D_tc0c0")
+
+[connection signal="body_entered" from="AreaExit/ExitCollider" to="." method="on_reaching_exit"]
+
+[editable path="Polygon2D/GASMASK"]
+[editable path="Polygon2D/GASMASK2"]
+[editable path="Zone"]
+[editable path="NPC"]
+[editable path="NPC3"]
+[editable path="NPC4"]
+[editable path="GasZone"]
