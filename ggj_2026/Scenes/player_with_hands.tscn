@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cb04tiqesybxl" path="res://Assets/masks/covered_b0.png" id="8_xr841"]
 [ext_resource type="Texture2D" uid="uid://bxgj4apof7wqq" path="res://Assets/masks/covered_b1.png" id="9_tuwer"]
 [ext_resource type="Texture2D" uid="uid://oejx12t6ll5n" path="res://Assets/masks/covered_b2.png" id="10_x8gqx"]
+[ext_resource type="Texture2D" uid="uid://daox5vrq4jlv3" path="res://Assets/masks/similing0.png" id="14_ggr6v"]
+[ext_resource type="Texture2D" uid="uid://l6jkb5ui8ehd" path="res://Assets/masks/similing1.png" id="15_h22ql"]
+[ext_resource type="Texture2D" uid="uid://dgtpef68ognpr" path="res://Assets/masks/similing2.png" id="16_katr3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dvchv"]
 animations = [{
@@ -82,6 +85,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlttd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ggr6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h22ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_katr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PlayerWithHands" type="Node2D" unique_id=417792850]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=577140398]
@@ -109,10 +129,11 @@ flip_h = true
 flip_v = true
 
 [node name="Neutral" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=585702787]
+position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_ggr6v")
 autoplay = "default"
-frame = 1
-frame_progress = 0.0002766384
+frame = 2
+frame_progress = 0.7646668
 
 [node name="CoveredA" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=286243777]
 visible = false
@@ -131,3 +152,10 @@ sprite_frames = SubResource("SpriteFrames_m0wty")
 autoplay = "default"
 frame = 2
 frame_progress = 0.03148307
+
+[node name="Smiling" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=370957416]
+position = Vector2(-15, -18)
+sprite_frames = SubResource("SpriteFrames_nlttd")
+autoplay = "default"
+frame = 1
+frame_progress = 0.9311165
