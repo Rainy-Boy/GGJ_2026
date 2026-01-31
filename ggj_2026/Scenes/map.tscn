@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bjabuilwucqtn" path="res://icon.svg" id="1_26yhd"]
 [ext_resource type="PackedScene" uid="uid://c4et0fw7wbhw8" path="res://Scenes/npc.tscn" id="1_ci6au"]
 [ext_resource type="PackedScene" uid="uid://buwu2n5ww13f3" path="res://Scenes/player.tscn" id="3_p3ir5"]
+[ext_resource type="PackedScene" uid="uid://djn56522hv0um" path="res://Scenes/zone.tscn" id="3_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="4_myvm1"]
 
 [node name="Map" type="Node2D" unique_id=1897939605]
@@ -18,9 +19,13 @@ position = Vector2(294, 500)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=225532118]
 
+[node name="Zone" parent="." unique_id=1273698596 node_paths=PackedStringArray("npcs") instance=ExtResource("3_q0mm3")]
+position = Vector2(962, 193)
+npcs = [NodePath("../NPC")]
+
 [node name="NPC" parent="." unique_id=66833485 instance=ExtResource("1_ci6au")]
 modulate = Color(1.5174499, 0, 0.16279602, 1)
-position = Vector2(977, 168)
+position = Vector2(1071, 134)
 
 [node name="Mask" parent="." unique_id=1306960532 instance=ExtResource("4_myvm1")]
 modulate = Color(0, 0.5299214, 0.24952698, 1)
