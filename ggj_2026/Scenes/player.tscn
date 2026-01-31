@@ -112,34 +112,35 @@ script = ExtResource("1_cvnsp")
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_cvnsp")
 
-[node name="Elements" type="Node2D" parent="." unique_id=432229689]
+[node name="Sprites" type="Node2D" parent="." unique_id=432229689]
 
-[node name="Neutral" type="AnimatedSprite2D" parent="Elements" unique_id=639269585]
+[node name="Neutral" type="AnimatedSprite2D" parent="Sprites" unique_id=639269585]
+visible = false
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_xuaoq")
 autoplay = "default"
 
-[node name="CoveredA" type="AnimatedSprite2D" parent="Elements" unique_id=545987505]
+[node name="CoveredA" type="AnimatedSprite2D" parent="Sprites" unique_id=545987505]
 visible = false
 modulate = Color(0.5019608, 1, 1, 1)
 position = Vector2(0, 26)
 sprite_frames = SubResource("SpriteFrames_wohnl")
 autoplay = "default"
 
-[node name="CoveredB" type="AnimatedSprite2D" parent="Elements" unique_id=1579390597]
+[node name="CoveredB" type="AnimatedSprite2D" parent="Sprites" unique_id=1579390597]
 visible = false
 modulate = Color(0.65700006, 1, 0.58000004, 1)
 position = Vector2(-29, 12)
 sprite_frames = SubResource("SpriteFrames_36dho")
 autoplay = "default"
 
-[node name="Smiling" type="AnimatedSprite2D" parent="Elements" unique_id=649803821]
+[node name="Smiling" type="AnimatedSprite2D" parent="Sprites" unique_id=649803821]
 visible = false
 position = Vector2(-15, -18)
 sprite_frames = SubResource("SpriteFrames_yh6i2")
 autoplay = "default"
 
-[node name="LeftHand" type="AnimatedSprite2D" parent="Elements" unique_id=1913285783]
+[node name="LeftHand" type="AnimatedSprite2D" parent="Sprites" unique_id=1913285783]
 position = Vector2(-155, 103)
 rotation = 1.3899024
 scale = Vector2(0.33699998, 0.29999998)
@@ -147,7 +148,7 @@ sprite_frames = SubResource("SpriteFrames_nv4vc")
 autoplay = "default"
 flip_v = true
 
-[node name="RightHand" type="AnimatedSprite2D" parent="Elements" unique_id=2042740255]
+[node name="RightHand" type="AnimatedSprite2D" parent="Sprites" unique_id=2042740255]
 position = Vector2(166, 94)
 rotation = -1.4038754
 scale = Vector2(0.325, 0.3)

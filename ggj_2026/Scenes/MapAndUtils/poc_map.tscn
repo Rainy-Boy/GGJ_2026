@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/mask_ui.tscn" id="5_283rw"]
 [ext_resource type="PackedScene" uid="uid://waeo3p4ky4hq" path="res://Scenes/mask.tscn" id="6_5et23"]
 [ext_resource type="PackedScene" uid="uid://dhb5a26lx7upo" path="res://Scenes/zone.tscn" id="7_tgt2m"]
-[ext_resource type="PackedScene" path="res://Scenes/game_over_ui.tscn" id="8_o38mw"]
+[ext_resource type="PackedScene" uid="uid://b7re1ma6ebvln" path="res://Scenes/game_over_ui.tscn" id="8_o38mw"]
 
 [sub_resource type="Gradient" id="Gradient_fn73a"]
 offsets = PackedFloat32Array(1)
