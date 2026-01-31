@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bvm3i3yty1twq"]
+
+[ext_resource type="Script" uid="uid://criva1ncvsblu" path="res://Scripts/ui_lore_screen_behaviour.gd" id="1_fwvkd"]
+
+[node name="LoreUI" type="CanvasLayer" unique_id=1812124657]
+
+[node name="Control" type="Control" parent="." unique_id=802420899]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 249.0
+offset_top = 59.0
+offset_right = 638.0
+offset_bottom = 208.0
+script = ExtResource("1_fwvkd")
+
+[node name="Label" type="Label" parent="Control" unique_id=17119578]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 54.0
+offset_right = 629.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 37
+text = "im a looooooooooooooooooooooooooooooooooooooooooooooooooooong text"
