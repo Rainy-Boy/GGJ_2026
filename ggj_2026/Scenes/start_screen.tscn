@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dmdm0llkndu4y"]
+
+[ext_resource type="Script" uid="uid://bxjvkfrrt1ehy" path="res://Scripts/ui_start_screen_behaviour.gd" id="1_i8r30"]
+
+[node name="StartScreen" type="CanvasLayer" unique_id=160874099]
+script = ExtResource("1_i8r30")
+
+[node name="GameName" type="Label" parent="." unique_id=1663442136]
+offset_left = 165.0
+offset_top = 31.0
+offset_right = 991.0
+offset_bottom = 263.0
+theme_override_font_sizes/font_size = 170
+text = "Infiltrated"
+
+[node name="StartButton" type="Button" parent="." unique_id=893658314]
+offset_left = 298.0
+offset_top = 326.0
+offset_right = 852.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 49
+text = "Start game"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1332768691]
+offset_left = 296.0
+offset_top = 469.0
+offset_right = 850.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 49
+text = "Quit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
