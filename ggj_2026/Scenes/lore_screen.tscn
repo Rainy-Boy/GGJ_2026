@@ -8,10 +8,10 @@
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = 249.0
-offset_top = 59.0
-offset_right = 638.0
-offset_bottom = 208.0
+offset_left = 410.0
+offset_top = 227.0
+offset_right = 799.0
+offset_bottom = 376.0
 script = ExtResource("1_fwvkd")
 
 [node name="Label" type="Label" parent="Control" unique_id=17119578]
@@ -21,4 +21,4 @@ offset_top = 54.0
 offset_right = 629.0
 offset_bottom = 203.0
 theme_override_font_sizes/font_size = 37
-text = "im a looooooooooooooooooooooooooooooooooooooooooooooooooooong text"
+text = "Your mission - escape from the facility. There will be obstacles along the way. Find and use masks to help you blend in and survive.            Good luck!"
