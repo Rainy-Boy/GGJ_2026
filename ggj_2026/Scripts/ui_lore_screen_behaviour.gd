@@ -15,7 +15,7 @@ func _ready() -> void:
 	# Create the tween
 	var tween = create_tween()
 	# and tween the offset left to a negative value so it scrolls to the right
-	tween.tween_property(label, "offset_left", final_offset, 15).set_delay(1)
+	tween.tween_property(label, "offset_left", final_offset, 8).set_delay(0.5)
 	# Set the overrun to ellipsis back
 	label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 
